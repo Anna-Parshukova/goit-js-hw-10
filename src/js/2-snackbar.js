@@ -4,8 +4,8 @@ import "izitoast/dist/css/iziToast.min.css";
 document.querySelector('.form').addEventListener('submit', function(event) {
   event.preventDefault();
 
-  const delay = Number(event.target.delay.value);
-  const state = event.target.state.value;
+  const delay = Number(document.querySelector('input[name="delay"]').value);
+  const state = document.querySelector('input[name="state"]:checked').value;
 
   createPromise(delay, state)
     .then(delay => {
